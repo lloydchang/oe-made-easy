@@ -1,7 +1,7 @@
 #!/bin/sh
  
-# Title: meta-meta-toolchain clean-build script
-# Purpose: To `bitbake meta-toolchain` from upstream oe-core http://www.openembedded.org/wiki/OpenEmbedded-Core
+# Title: oe-getting-started clean-build script
+# Purpose: To `bitbake ...` from upstream oe-core http://www.openembedded.org/wiki/OpenEmbedded-Core
 # Author: Lloyd Chang <lloyd.chang@gmail.com>
 # Documentation: See README file
 
@@ -26,8 +26,8 @@ BITBAKE_DIR=./bitbake
 [ -d $BITBAKE_DIR ] && mv  $BITBAKE_DIR  $BITBAKE_DIR.backup.$(date "+%Y%m%dT%H%M%S")
 git clone git://git.openembedded.org/bitbake $BITBAKE_DIR
 
-MACHINE_LIST=$@
-[ -z $MACHINE_LIST ] && MACHINE_LIST="qemuarm qemux86"
+PARAMETERS=$@
+MACHINE_LIST="qemuarm qemux86 qemux86-64"
 LOCAL_CONF_FILE=./conf/local.conf
 for CURRENT_MACHINE in $MACHINE_LIST
 do
@@ -37,6 +37,6 @@ do
     sed -i "/^#MACHINE ?= \"qemuarm\"/s/$/\\nMACHINE = \"$CURRENT_MACHINE\"/" $LOCAL_CONF_FILE
     sed -i "s/^#BB_NUMBER_THREADS.*$/BB_NUMBER_THREADS\ =\ \"$(grep -c processor /proc/cpuinfo)\"/" $LOCAL_CONF_FILE
     sed -i "s/^#PARALLEL_MAKE.*$/PARALLEL_MAKE\ =\ \"-j$(grep -c processor /proc/cpuinfo)\"/" $LOCAL_CONF_FILE
-    bitbake meta-toolchain
+    bitbake $PARAMETERS
     cd ..
 done

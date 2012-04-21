@@ -1,9 +1,9 @@
-Title: meta-meta-toolchain README
-Purpose: To `bitbake meta-toolchain` from upstream oe-core http://www.openembedded.org/wiki/OpenEmbedded-Core
+Title: oe-getting-started README
+Purpose: To `bitbake ...` from upstream oe-core http://www.openembedded.org/wiki/OpenEmbedded-Core
 Author: Lloyd Chang <lloyd.chang@gmail.com>
 Documentation:
 
 Getting Started (public anonymous read-only access)
 
-    git clone git://github.com/lloydchang/meta-meta-toolchain.git
-    cd meta-meta-toolchain && ./clean-build
+    git clone git://github.com/lloydchang/oe-getting-started.git
+    cd oe-getting-started && ./clean-build
