@@ -1,0 +1,2 @@
+#!/bin/sh -xe
+./clean-build $0
