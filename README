@@ -1,4 +1,4 @@
-Title: meta-meta-toolchain clean-build script
+Title: meta-meta-toolchain README
 Purpose: To `bitbake meta-toolchain` from upstream oe-core http://www.openembedded.org/wiki/OpenEmbedded-Core
 Author: Lloyd Chang <lloyd.chang@gmail.com>
 Documentation:
