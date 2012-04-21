@@ -3,7 +3,7 @@ Purpose: To `bitbake meta-toolchain` from upstream oe-core http://www.openembedd
 Author: Lloyd Chang <lloyd.chang@gmail.com>
 Documentation:
 
-Getting Started
+Getting Started (public anonymous read-only access)
 
-    git clone git@github.com:lloydchang/meta-meta-toolchain.git
+    git clone git://github.com/lloydchang/meta-meta-toolchain.git
     cd meta-meta-toolchain && ./clean-build
