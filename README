@@ -5,4 +5,5 @@ Documentation:
 
 Getting Started
 
-    ./clean-build
+    clone git://github.com/lloydchang/meta-meta-toolchain.git
+    cd meta-meta-toolchain && ./clean-build
