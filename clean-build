@@ -1,11 +1,9 @@
-#!/bin/sh
+#!/bin/sh -xe
  
 # Title: oe-getting-started clean-build script
 # Purpose: To `bitbake ...` from upstream oe-core http://www.openembedded.org/wiki/OpenEmbedded-Core
 # Author: Lloyd Chang <lloyd.chang@gmail.com>
 # Documentation: See README file
-
-set -xe
 
 # capture our build host's linux distribution, kernel version, userspace architecture and username
 lsb_release -a
