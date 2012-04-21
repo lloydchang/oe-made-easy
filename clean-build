@@ -6,12 +6,9 @@
 # Documentation: See README file
 
 # capture our build host's linux distribution, kernel version, userspace architecture and username
-lsb_release -a
-uname -a
-dpkg --print-architecture
-whoami
+lsb_release -a; uname -a; dpkg --print-architecture; whoami
 
-# bootstrapping git and tools needed by oe-core/meta/classes/sanity.bblcass
+# bootstrapping git and utilities needed by oe-core/meta/classes/sanity.bblcass
 SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A apt-get update
 SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A apt-get install -y git patch diffstat texi2html texinfo subversion bzip2 tar gzip gawk chrpath wget cpio make gcc g++
 
