@@ -1,0 +1,8 @@
+Title: meta-meta-toolchain
+Purpose: To bitbake meta-toolchain from upstream oe-core
+Author: Lloyd Chang <lloyd.chang@gmail.com>
+Documentation:
+
+Getting Started
+
+    ./clean-build
