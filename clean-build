@@ -14,16 +14,16 @@ SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A apt-get update
 SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A apt-get install -y git patch diffstat texi2html texinfo subversion bzip2 tar gzip gawk chrpath wget cpio make gcc g++
 
 PARAMETERS=$@
+PARAMETERS_DIR=$(echo $PARAMETERS | sed -e "s/ /_/g")
+[ -d $PARAMETERS_DIR ] && mv $PARAMETERS_DIR $PARAMETERS_DIR.backup.$(date "+%Y%m%dT%H%M%S")
+mkdir -p $PARAMETERS_DIR
+cd $PARAMETERS_DIR
+
 # Getting Started from https://wiki.yoctoproject.org/wiki/OpenEmbedded-Core
-OE_CORE_DIR=./oe-core-$(echo $PARAMETERS | sed -e "s/ /_/g")
-OE_CORE_DIR_SYMLINK=./oe-core
+OE_CORE_DIR=./oe-core
 BITBAKE_DIR=./bitbake
-[ -d $OE_CORE_DIR ] && mv $OE_CORE_DIR $OE_CORE_DIR.backup.$(date "+%Y%m%dT%H%M%S")
 git clone git://git.openembedded.org/openembedded-core $OE_CORE_DIR
-[ [ -L $OE_CORE_DIR_SYMLINK ] -o [ -d $OE_CORE_DIR ] ] && mv $OE_CORE_DIR_SYMLINK $OE_CORE_DIR_SYMLINK.backup.$(date "+%Y%m%dT%H%M%S")
-ln -sfn $OE_CORE_DIR_SYMLINK $OE_CORE_DIR
 cd $OE_CORE_DIR
-[ -d $BITBAKE_DIR ] && mv  $BITBAKE_DIR  $BITBAKE_DIR.backup.$(date "+%Y%m%dT%H%M%S")
 git clone git://git.openembedded.org/bitbake $BITBAKE_DIR
 
 MACHINE_LIST="qemuarm qemux86 qemux86-64"
