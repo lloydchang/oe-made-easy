@@ -5,11 +5,11 @@ Getting Started
 
 This builds core-image-minimal from OpenEmbedded-Core for you :-)
 
-HOWTO: Adding your local shell tab-key-autocomplete foo wrapper (in lieu of core-image-minimal)
+HOWTO: Adding your personal shell tab-key-autocomplete foo wrapper (in lieu of core-image-minimal)
 
     ln -sfn ./clean-build-self ./foo
     ./foo
 
-Vision: Making OpenEmbedded Easier for You
-Mission: Simplifying User Experiences Effectively :-)
+Vision: Making OpenEmbedded Easier for You :-)
+Mission: Simplifying User Experiences Effectively!
 Author: Lloyd Chang <lloyd.chang@gmail.com>
