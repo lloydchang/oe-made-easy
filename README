@@ -1,15 +1,17 @@
-Getting Started
+Getting Started (2 lines)
 
     git clone git://github.com/lloydchang/oe-made-easy.git
     cd oe-made-easy && ./core-image-minimal
 
-This builds core-image-minimal from OpenEmbedded-Core for you :-)
+This cleanly builds core-image-minimal recipe from OpenEmbedded-Core for you :-)
+Afterwards, you can browse the ./oe-core directory to build incrementally
 
-HOWTO: Adding your personal shell tab-key-autocomplete foo wrapper (in lieu of core-image-minimal)
+Related Documentation (3 links)
+http://www.openembedded.org/wiki/OpenEmbedded-Core
+https://wiki.yoctoproject.org/wiki/OpenEmbedded-Core
+http://cgit.openembedded.org/openembedded-core/tree/meta/recipes-core
 
-    ln -sfn ./clean-build-self ./foo
-    ./foo
-
+Project: oe-made-easy
 Vision: Making OpenEmbedded Easier for You :-)
 Mission: Simplifying User Experiences Effectively!
 Author: Lloyd Chang <lloyd.chang@gmail.com>
