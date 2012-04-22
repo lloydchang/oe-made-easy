@@ -15,7 +15,7 @@ SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A apt-get install -y git patch diffstat 
 
 PARAMETERS=$@
 PARAMETERS_BUILD_DIR=BUILD-$(echo $PARAMETERS | sed -e "s/ /_/g")
-[ -d $PARAMETERS_BUILD_DIR ] && mv $PARAMETERS_DIR $PARAMETERS_DIR.backup.$(date "+%Y%m%dT%H%M%S")
+[ -d $PARAMETERS_BUILD_DIR ] && mv $PARAMETERS_BUILD_DIR $PARAMETERS_BUILD_DIR.backup.$(date "+%Y%m%dT%H%M%S")
 mkdir -p $PARAMETERS_BUILD_DIR
 cd $PARAMETERS_BUILD_DIR
 
