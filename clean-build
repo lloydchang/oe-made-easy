@@ -36,7 +36,7 @@ do
     sed -i "/^#MACHINE ?= \"qemuarm\"/s/$/\\nMACHINE = \"$CURRENT_MACHINE\"/" $LOCAL_CONF_FILE
     sed -i "s/^#BB_NUMBER_THREADS.*$/BB_NUMBER_THREADS\ =\ \"$(grep -c processor /proc/cpuinfo)\"/" $LOCAL_CONF_FILE
     sed -i "s/^#PARALLEL_MAKE.*$/PARALLEL_MAKE\ =\ \"-j$(grep -c processor /proc/cpuinfo)\"/" $LOCAL_CONF_FILE
-    BITBAKE_LOG_FILE=$(pwd)/bitbake.log.$(date "+%Y%m%dT%H%M%S")
+    BITBAKE_LOG_FILE=./bitbake.log.$(date "+%Y%m%dT%H%M%S")
     bitbake $PARAMETERS 2>&1 | tee $BITBAKE_LOG_FILE
     cd ..
 done
