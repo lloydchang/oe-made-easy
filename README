@@ -3,10 +3,13 @@ Getting Started
     git clone git://github.com/lloydchang/oe-made-easy.git
     cd oe-made-easy && ./core-image-minimal
 
-Vision: Making OpenEmbedded Easy
+This builds core-image-minimal from OpenEmbeded-Core for you :-)
 
-Mission: Making people smile :-) by simplifying user experiences
+HOWTO: Adding your local shell tab-key-autocomplete foo wrapper (in lieu of core-image-minimal)
 
+    ln -sfn ./clean-build-self ./foo
+    ./foo
+
+Vision: Making OpenEmbedded Easier for You
+Mission: Simplifying User Experiences Effectively :-)
 Author: Lloyd Chang <lloyd.chang@gmail.com>
-
-Personalization: To create your new shell wrapper foo, run `ln -s ./clean-build-self foo`
