@@ -34,6 +34,6 @@ do
     sed -i "s/^#BB_NUMBER_THREADS.*$/BB_NUMBER_THREADS\ =\ \"$(grep -c processor /proc/cpuinfo)\"/" $LOCAL_CONF_FILE
     sed -i "s/^#PARALLEL_MAKE.*$/PARALLEL_MAKE\ =\ \"-j$(grep -c processor /proc/cpuinfo)\"/" $LOCAL_CONF_FILE
     BITBAKE_LOG_FILE=$(pwd)/bitbake.log.$(date "+%Y%m%dT%H%M%S")
-    bitbake $PARAMETERS | tee $BITBAKE_LOG_FILE
+    bitbake $PARAMETERS 2>&1 | tee $BITBAKE_LOG_FILE
     cd ..
 done
