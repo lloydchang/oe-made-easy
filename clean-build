@@ -14,10 +14,10 @@ SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A apt-get update
 SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A apt-get install -y git patch diffstat texi2html texinfo subversion bzip2 tar gzip gawk chrpath wget cpio make gcc g++
 
 PARAMETERS=$@
-PARAMETERS_DIR=$(echo $PARAMETERS | sed -e "s/ /_/g")
-[ -d $PARAMETERS_DIR ] && mv $PARAMETERS_DIR $PARAMETERS_DIR.backup.$(date "+%Y%m%dT%H%M%S")
-mkdir -p $PARAMETERS_DIR
-cd $PARAMETERS_DIR
+PARAMETERS_BUILD_DIR=BUILD-$(echo $PARAMETERS | sed -e "s/ /_/g")
+[ -d $PARAMETERS_BUILD_DIR ] && mv $PARAMETERS_DIR $PARAMETERS_DIR.backup.$(date "+%Y%m%dT%H%M%S")
+mkdir -p $PARAMETERS_BUILD_DIR
+cd $PARAMETERS_BUILD_DIR
 
 # Getting Started from https://wiki.yoctoproject.org/wiki/OpenEmbedded-Core
 OE_CORE_DIR=./oe-core
