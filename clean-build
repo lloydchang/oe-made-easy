@@ -23,7 +23,7 @@ BITBAKE_DIR=./bitbake
 git clone git://git.openembedded.org/bitbake $BITBAKE_DIR
 
 PARAMETERS=$@
-MACHINE_LIST="qemuarm qemux86 qemux86_64"
+MACHINE_LIST="qemuarm qemux86 qemux86-64"
 LOCAL_CONF_FILE=./conf/local.conf
 for CURRENT_MACHINE in $MACHINE_LIST
 do
