@@ -3,10 +3,10 @@ Getting Started (2 lines)
     git clone git://github.com/lloydchang/oe-made-easy.git
     cd oe-made-easy && ./core-image-minimal
 
-This cleanly builds core-image-minimal recipe from OpenEmbedded-Core for you :-)
-Afterwards, you can browse the ./oe-core directory to build incrementally
+This bootstraps and cleanly builds core-image-minimal recipe from OpenEmbedded-Core for you :-)
+Afterwards, you could use the 'oe-made-easy/oe-core' subdirectory to build incrementally
 
-Related Documentation (3 links)
+Please see related documentation (3 links)
 http://www.openembedded.org/wiki/OpenEmbedded-Core
 https://wiki.yoctoproject.org/wiki/OpenEmbedded-Core
 http://cgit.openembedded.org/openembedded-core/tree/meta/recipes-core
