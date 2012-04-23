@@ -9,9 +9,11 @@
 # capture our build host's linux distribution, kernel version, userspace architecture and username
 lsb_release -a; uname -a; dpkg --print-architecture; whoami
 
-# bootstrapping git and utilities needed by oe-core/meta/classes/sanity.bblcass
+# bootstrapping git and utilities
+# needed by oe-core/meta/classes/sanity.bblcass
+# and oe-core/meta/recipes-devtools/qemu/qemu.inc
 SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A apt-get update
-SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A apt-get install -y git patch diffstat texi2html texinfo subversion bzip2 tar gzip gawk chrpath wget cpio make gcc g++
+SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A apt-get install -y git patch diffstat texi2html texinfo subversion bzip2 tar gzip gawk chrpath wget cpio make gcc g++ libgl1-mesa-dev libglu1-mesa-dev libsdl1.2-dev
 
 PARAMETERS=$@
 PARAMETERS_BUILD_DIR=BUILD-$(echo $PARAMETERS | sed -e "s/ /_/g")
