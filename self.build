@@ -1,6 +1,6 @@
 #!/bin/sh -xe
  
-# Title: oe-made-easy clean-build script
+# Title: oe-made-easy self.build script
 # Where: https://github.com/lloydchang/oe-made-easy
 # Purpose: To `bitbake ...` from upstream oe-core http://www.openembedded.org/wiki/OpenEmbedded-Core
 # Author: Lloyd Chang <lloyd.chang@gmail.com>
@@ -15,7 +15,7 @@ lsb_release -a; uname -a; dpkg --print-architecture; whoami
 SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A apt-get update
 SUDO_ASKPASS=/usr/bin/ssh-askpass sudo -A apt-get install -y git patch diffstat texi2html texinfo subversion bzip2 tar gzip gawk chrpath wget cpio make gcc g++ libgl1-mesa-dev libglu1-mesa-dev libsdl1.2-dev
 
-PARAMETERS=$@
+PARAMETERS=$(basename $0) $@
 PARAMETERS_BUILD_DIR=BUILD-$(echo $PARAMETERS | sed -e "s/ /_/g")
 [ -d $PARAMETERS_BUILD_DIR ] && mv $PARAMETERS_BUILD_DIR $PARAMETERS_BUILD_DIR.backup.$(date "+%Y%m%dT%H%M%S")
 mkdir -p $PARAMETERS_BUILD_DIR

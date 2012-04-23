@@ -1,2 +1,0 @@
-#!/bin/sh -xe
-$(dirname $0)/clean-build $(basename $0) $@
