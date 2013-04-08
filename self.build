@@ -9,6 +9,8 @@
 # capture our build host's linux distribution, kernel version, userspace architecture and username
 lsb_release -a; uname -a; dpkg --print-architecture; whoami
 
+which ssh-askpass || sudo apt-get install ssh-askpass
+
 # bootstrapping git and utilities
 # needed by oe-core/meta/classes/sanity.bblcass
 # and oe-core/meta/recipes-devtools/qemu/qemu.inc
